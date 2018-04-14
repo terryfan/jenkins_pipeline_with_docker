@@ -10,7 +10,7 @@ pipeline {
 		stage('build') {
 		    steps {
 		        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws_s3', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-		            sh 'aws s3 ls s3://appier-common-data-13b074/'
+		            sh 'make build'
                 }
 		    }
 		}		
