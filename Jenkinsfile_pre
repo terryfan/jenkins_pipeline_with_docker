@@ -6,11 +6,13 @@ pipeline {
 			filename 'Dockerfile_pre'
 		}
 	}
-	stage('build') {
-		steps {
-			withEnv(['PWD=' + pwd()]){
-				sh 'echo hello world! $(PWD)'
+	stages {
+		stage('build') {
+			steps {
+				withEnv(['PWD=' + pwd()]){
+					sh 'echo hello world! $(PWD)'
+				}
 			}
-		}
+		}		
 	}
 }
